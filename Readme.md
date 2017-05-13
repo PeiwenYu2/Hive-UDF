@@ -1,15 +1,15 @@
 # 1. Set the permission to allow sqoop get access to Accounts and Contacts tables in mysql
----
+
 GRANT ALL PRIVILEGES ON homework4.* to ‘’@‘localhost’;
 
 
 # 2. Use Sqoop to import two tables into Hive
----
+
 sqoop import-all-tables --connect jdbc:mysql://localhost/homework4 --driver com.mysql.jdbc.Driver --hive-import --hive-database homework4 -m 1
 
 
 # 3. Create two encrypted tables in hive
----
+
 **Encrypted_accounts table**
 
 CREATE TABLE encrypted_accounts (
@@ -31,17 +31,17 @@ CREATE TABLE encrypted_contacts (
 
 
 # 4. Add UDF JAR file in Hive
----
+
 ADD JAR PIIWatcher.jar;
 
 
 # 5. Create a temporary function using this JAR
----
+
 CREATE TEMPORARY function PIIWatcher as ‘PIIWatcher’;
 
 
 # 6. Insert Overwrite into two encrypted tables using Hive UDF
----
+
 **Encrypted_accounts table**
 
 INSERT OVERWRITE TABLE encrypted_accounts  
@@ -56,7 +56,7 @@ FROM contacts;
 
 
 # 7. Create two encrypted table in mysql:
----
+
 **Encrypted_accounts table**
 
 CREATE TABLE encrypted_accounts (  
@@ -78,7 +78,7 @@ CREATE TABLE encrypted_contacts (
 
 
 # 8. Use sqoop to export two encrypted tables from hive to mySQL database
----
+
 **Encrypted_accounts table**
 
 sqoop export --connect jdbc:mysql://localhost/homework4 --driver com.mysql.jdbc.Driver --table encrypted_accounts --export-dir /apps/hive/warehouse/homework4.db/encrypted_accounts --input-fields-terminated-by ‘\0001’ -m 1
