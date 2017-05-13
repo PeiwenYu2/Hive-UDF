@@ -13,20 +13,20 @@ sqoop import-all-tables --connect jdbc:mysql://localhost/homework4 --driver com.
 **Encrypted_accounts table**
 
 CREATE TABLE encrypted_accounts (
-    id BIGINT,  
-    name VARCHAR(50),  
-    phone CHAR(12)  
+  id BIGINT,  
+  name VARCHAR(50),  
+  phone CHAR(12)  
 );
 
 **Encrypted_contacts table**
 
 CREATE TABLE encrypted_contacts (  
-    id BIGINT,  
-    account_id BIGINT,  
-    first_name VARCHAR(50),  
-    last_name VARCHAR(50),  
-    phone CHAR(12),  
-    email VARCHAR(50)  
+  id BIGINT,  
+  account_id BIGINT,  
+  first_name VARCHAR(50),  
+  last_name VARCHAR(50),  
+  phone CHAR(12),  
+  email VARCHAR(50)  
 );
 
 
@@ -60,20 +60,20 @@ FROM contacts;
 **Encrypted_accounts table**
 
 CREATE TABLE encrypted_accounts (  
-    id INTEGER,  
-    name VARCHAR(50),  
-    phone CHAR(12)  
+  id INTEGER,  
+  name VARCHAR(50),  
+  phone CHAR(12)  
 );
 
 **Encrypted_contacts table**
 
 CREATE TABLE encrypted_contacts (  
-    id INTEGER,  
-    account_id INTEGER,  
-    first_name VARCHAR(50),  
-    last_name VARCHAR(50),  
-    phone CHAR(12),  
-    email VARCHAR(50)  
+  id INTEGER,  
+  account_id INTEGER,  
+  first_name VARCHAR(50),  
+  last_name VARCHAR(50),  
+  phone CHAR(12),  
+  email VARCHAR(50)  
 );
 
 
