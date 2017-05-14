@@ -18,18 +18,21 @@ public class PIIWatcher extends UDF{
 		if (segments.length == 2){
 			return new Text(mask(lastSegment, AT_SIGN));
 		}
-		else {
+		else if (segments.length == 3){
 			return new Text(mask(lastSegment, DASH));
+		}
+		else {
+			return new Text();
 		}
 	}
 	
 	private String mask(String lastSegment, String delimiter) {
 		StringBuilder sb = new StringBuilder();
-		int i = delimiter.equals("@") ? 1 : 2; 
-		while (i > 0) {
+		int maskNum = delimiter.equals("@") ? 1 : 2; 
+		while (maskNum > 0) {
 			sb.append(MASK);
 			sb.append(delimiter);
-			i--;
+			maskNum--;
 		}
 		sb.append(lastSegment);
 		return sb.toString();
