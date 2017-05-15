@@ -1,4 +1,4 @@
-package com.marlabs.bigdata.piiwatcher;
+package bigdata.piiwatcher;
 
 import org.apache.hadoop.hive.ql.exec.UDF;
 import org.apache.hadoop.io.Text;

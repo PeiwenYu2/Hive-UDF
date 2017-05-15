@@ -81,8 +81,8 @@ CREATE TABLE encrypted_contacts (
 
 **Encrypted_accounts table**
 
-sqoop export --connect jdbc:mysql://localhost/homework4 --driver com.mysql.jdbc.Driver --table encrypted_accounts --export-dir /apps/hive/warehouse/homework4.db/encrypted_accounts --input-fields-terminated-by ‘\0001’ -m 1
+sqoop export --connect jdbc:mysql://localhost/homework4 --driver com.mysql.jdbc.Driver --table encrypted_accounts --export-dir /apps/hive/warehouse/homework4.db/encrypted_accounts --input-fields-terminated-by '\0001' -m 1
 
 **Encrypted_contacts table**
 
-sqoop export --connect jdbc:mysql://localhost/homework4 --driver com.mysql.jdbc.Driver --table Encrypted_contacts --export-dir /apps/hive/warehouse/homework4.db/Encrypted_contacts --input-fields-terminated-by ‘\0001’ -m 1
+sqoop export --connect jdbc:mysql://localhost/homework4 --driver com.mysql.jdbc.Driver --table encrypted_contacts --export-dir /apps/hive/warehouse/homework4.db/encrypted_contacts --input-fields-terminated-by '\0001' -m 1
